@@ -1,6 +1,7 @@
 let cheese = 0
 let click = 1
 let cheeseKnife = 0
+let cheeseWheel = 0
 let cheeseBoard = 0
 
 
@@ -31,7 +32,7 @@ function getCheese() {
   cheese += click
   update()
 }
-/*REVIEW add when player has been created*/
+
 function buyCheeseKnife() {
 
   if (cheese >= 20) {
@@ -42,12 +43,23 @@ function buyCheeseKnife() {
   update()
 }
 
-function modifier(cheeseknife) {
+function buyCheeseWheel() {
 
-  click += click * clickUp[cheeseknife].multiplier
+  if (cheese >= 50) {
+    cheese -= 50
+    cheeseKnife = + 1
+  }
+  modifier()
+  update()
+}
+
+function modifier(banana) {
+
+  click += click * clickUp[banana].multiplier
 
 }
-function onClick() {
+
+function collectAutoUpgrades() {
 
 }
 
@@ -59,6 +71,7 @@ function update() {
 
   document.getElementById('cheese').innerText = cheese
   document.getElementById('cheeseknife').innerText = cheeseKnife
+  document.getElementById('cheeseWheel').innerText = cheeseWheel
   document.getElementById('cheeseboard').innerText = cheeseBoard
 }
 
