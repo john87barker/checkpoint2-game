@@ -6,3 +6,11 @@ body {
 main{ 
    flex-grow: 1;
   }
+
+.box-shadow{
+  margin-top: 3em;
+  padding-top: 2em;
+  background-color: mediumpurple;
+  box-shadow: 1px 1px 15px blanchedalmond;
+  height: 50vh;
+}

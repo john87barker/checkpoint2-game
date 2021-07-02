@@ -1,7 +1,7 @@
 let cheese = 0
 
 function getCheese() {
-  for (let i = 0; i <= 50; i++) {
+  for (let i = 0; i <= 999999999999999999999999999999999999999999999; i++) {
     cheese += 1
     console.log("Cheese collected")
     return 'cheese +1'
