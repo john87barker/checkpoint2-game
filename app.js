@@ -1,16 +1,22 @@
 let cheese = 0
+let click = 1
 let cheeseKnife = 0
 let cheeseBoard = 0
 
 
-let clickUpgrades = {
+let clickUp = {
   cheeseknife: {
-    price: 120,
+    price: 20,
     quantity: 0,
     multiplier: 1
+  },
+  cheesewheel: {
+    price: 50,
+    quantity: 0,
+    multiplier: 5
   }
 }
-let autoUpgrades = {
+let autoUp = {
   cheeseboard: {
     price: 750,
     quantity: 0,
@@ -22,27 +28,28 @@ let autoUpgrades = {
 
 function getCheese() {
 
-  cheese += 1
+  cheese += click
   update()
 }
 /*REVIEW add when player has been created*/
 function buyCheeseKnife() {
 
-  if (cheese >= 120) {
-    cheese -= 120
+  if (cheese >= 20) {
+    cheese -= 20
     cheeseKnife = + 1
   }
-
+  modifier('cheeseknife')
   update()
 }
 
+function modifier(cheeseknife) {
 
+  click += click * clickUp[cheeseknife].multiplier
 
+}
+function onClick() {
 
-
-
-
-
+}
 
 
 function update() {
@@ -54,5 +61,6 @@ function update() {
   document.getElementById('cheeseknife').innerText = cheeseKnife
   document.getElementById('cheeseboard').innerText = cheeseBoard
 }
+
 
 update()
