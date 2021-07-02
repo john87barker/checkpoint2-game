@@ -22,7 +22,11 @@ function getCheese() {
   update()
 }
 
+function buyCheeseboard() {
 
+
+  console.log("purchased")
+}
 
 
 
