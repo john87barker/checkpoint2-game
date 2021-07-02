@@ -1,4 +1,8 @@
 let cheese = 0
+let cheeseKnife = 0
+let cheeseBoard = 0
+
+
 let clickUpgrades = {
   cheeseknife: {
     price: 120,
@@ -21,11 +25,12 @@ function getCheese() {
   cheese += 1
   update()
 }
-
-function buyCheeseboard() {
-
-
+/*REVIEW add when player has been created*/
+function buyCheeseKnife() {
   console.log("purchased")
+  // if(player cheese amount >= cheese){ cheese -= 120}
+  cheeseKnife = + 1
+  update()
 }
 
 
@@ -38,6 +43,7 @@ function buyCheeseboard() {
 
 function update() {
   document.getElementById('cheese').innerText = cheese
+  document.getElementById('cheeseknife').innerText = cheeseKnife
 }
 
 update()
