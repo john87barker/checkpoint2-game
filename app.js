@@ -27,9 +27,12 @@ function getCheese() {
 }
 /*REVIEW add when player has been created*/
 function buyCheeseKnife() {
-  console.log("purchased")
-  // if(player cheese amount >= cheese){ cheese -= 120}
-  cheeseKnife = + 1
+
+  if (cheese >= 120) {
+    cheese -= 120
+    cheeseKnife = + 1
+  }
+
   update()
 }
 
@@ -41,9 +44,15 @@ function buyCheeseKnife() {
 
 
 
+
 function update() {
+  if (cheese <= 0) {
+    cheese = 0
+  }
+
   document.getElementById('cheese').innerText = cheese
   document.getElementById('cheeseknife').innerText = cheeseKnife
+  document.getElementById('cheeseboard').innerText = cheeseBoard
 }
 
 update()
