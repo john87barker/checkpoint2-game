@@ -26,7 +26,6 @@ let autoUp = {
 }
 /***SECTION functions*/
 function getCheese() {
-
   cheese += click
   update()
 }
@@ -58,10 +57,7 @@ function buyCheeseBoard() {
     cheeseBoard += 1
   }
 
-
-
   update()
-  collectAutoUpgrades()
 }
 
 function modifier(banana) {
@@ -75,13 +71,15 @@ function collectAutoUpgrades(cheeseboard) {
 
   cheese += (quantity * multiplier)
   // console.log('[upgrades]', upgrades)
+
   startInterval()
   update()
 }
 
 function startInterval() {
   collectionInterval = setInterval(collectAutoUpgrades, 3000)
-  console.log('[interval] It started')
+  // console.log('[interval] It started')
+  update()
 }
 
 
