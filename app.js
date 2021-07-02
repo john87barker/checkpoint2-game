@@ -19,14 +19,12 @@ let clickUp = {
 }
 let autoUp = {
   cheeseboard: {
-    price: 750,
-    quantity: 0,
+    price: 75,
+    quantity: 1,
     multiplier: 12
   }
 }
-
-
-
+/***SECTION functions*/
 function getCheese() {
 
   cheese += click
@@ -52,15 +50,32 @@ function buyCheeseWheel() {
   modifier()
   update()
 }
+// function buyCheeseBoard() {
+
+//   if (cheese >= 75) {
+//     cheese -= 75
+
+//     cheeseBoard = + 1
+//   }
+//   update()
+
+// }
 
 function modifier(banana) {
-
   click += click * clickUp[banana].multiplier
-
 }
 
 function collectAutoUpgrades() {
+  let quantity = autoUp.cheeseboard.quantity
+  let multiplier = autoUp.cheeseboard.multiplier
 
+  upgrades = (quantity * multiplier) + cheese
+  console.log('[upgrades]', upgrades)
+}
+
+function startInterval() {
+  collectionInterval = setInterval(collectAutoUpgrades, 3000)
+  console.log('[interval] It started')
 }
 
 
