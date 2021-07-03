@@ -3,6 +3,7 @@ let click = 1
 let cheeseKnife = 0
 let cheeseWheel = 0
 let cheeseBoard = 0
+let bottleOfWine = 0
 
 
 let clickUp = {
@@ -14,14 +15,21 @@ let clickUp = {
   cheesewheel: {
     price: 50,
     quantity: 0,
-    multiplier: 5
+    multiplier: 4
   }
 }
 let autoUp = {
   cheeseboard: {
     price: 75,
     quantity: 1,
-    multiplier: 12
+    multiplier: 10
+    //starts interval
+  },
+  bottleOfWine: {
+    price: 100,
+    quantity: 1,
+    multiplier: (cheese * 2)
+    //doubles
   }
 }
 /***SECTION functions*/
@@ -33,10 +41,11 @@ function getCheese() {
 function buyCheeseKnife() {
 
   if (cheese >= 20) {
-    cheese -= 20
+
     cheeseKnife += 1
+    cheese -= 20
+    modifier('cheeseknife')
   }
-  modifier('cheeseknife')
   update()
 }
 
@@ -45,16 +54,28 @@ function buyCheeseWheel() {
   if (cheese >= 50) {
     cheese -= 50
     cheeseWheel += 1
+    modifier('cheesewheel')
   }
-  modifier('cheesewheel')
   update()
 }
 
 function buyCheeseBoard() {
 
-  if (cheese >= 75) {
-    cheese -= 75
+  if (cheese >= 100) {
+    cheese -= 100
     cheeseBoard += 1
+
+  }
+
+  update()
+}
+
+function buyWine() {
+
+  if (cheese >= 150) {
+    // cheese -= 150
+    cheese *= 2
+    bottleOfWine += 1
   }
 
   update()
@@ -69,10 +90,12 @@ function collectAutoUpgrades(cheeseboard) {
   let multiplier = autoUp['cheeseboard'].multiplier
   // console.log(quantity, multiplier)
 
-  cheese += (quantity * multiplier)
-  // console.log('[upgrades]', upgrades)
+  if (cheese >= 100) {
+    cheese += (quantity * multiplier)
+    // console.log('[upgrades]', upgrades)
+    startInterval()
+  }
 
-  startInterval()
   update()
 }
 
@@ -92,6 +115,7 @@ function update() {
   document.getElementById('cheeseknife').innerText = cheeseKnife
   document.getElementById('cheesewheel').innerText = cheeseWheel
   document.getElementById('cheeseboard').innerText = cheeseBoard
+  document.getElementById('bottleofwine').innerText = bottleOfWine
 }
 
 
