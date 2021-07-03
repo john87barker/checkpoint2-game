@@ -11,53 +11,62 @@
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="slate.bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Cheese Mountain</title>
 </head>
 
 <body class="container-fluid">
-  <Header class="text-center">
+  <Header class="text-center bg-secondary text-dark">
     <h1>🧀 Mines of Mozza and Muenster 🧀</h1>
   </Header>
 
   <main class="row-12 d-flex justify-content-around">
     <!-- add ons -->
-    <div class="col-md-3 box box-shadow">
-      <h3> Add-Ons</h3>
-      <button type="button" class="btn btn-primary" onclick="buyCheeseKnife()">Buy a Cheese Knife</button>
-      <button type="button" class="btn btn-primary" onclick="buyCheeseWheel()">Buy a Cheese Wheel</button>
+    <div class="col-md-3 box-shadow">
+      <h3 class="pb-2"> Add-Ons</h3>
+      <button type="button" class="btn btn-warning" onclick="buyCheeseKnife()">Buy a Cheese Knife</button>
+      <button type="button" class="btn btn-warning" onclick="buyCheeseWheel()">Buy a Cheese Wheel</button>
+      <button type="button" class="btn btn-warning" onclick="buyWine()">Buy a
+        Bottle of Wine</button>
       <hr>
-      <button type="button" class="btn btn-primary" onclick="collectAutoUpgrades(cheeseboard); buyCheeseBoard()">Buy a
+      <button type="button" class="btn btn-warning" onclick="collectAutoUpgrades(cheeseboard); buyCheeseBoard()">Buy a
         Cheese
         Board</button>
-      <button type="button" class="btn btn-primary" onclick="buyWine()">Buy a
-        Bottle of Wine</button>
+
     </div>
 
     <!-- Pic -->
-    <div class="col-md-3 box box-shadow " onclick="getCheese()">
+    <div class="col-md-3 box-shadow " onclick="getCheese()">
+      <h3 class="p-0 text-right"> Cheese Quantity:
+        <div id="cheese">--</div>
+      </h3>
+      <hr>
       <img src="cheese mountain.jpg" alt="click" class="w-100">
+      <hr>
     </div>
     <!-- Quantaties -->
 
-    <div class="col-md-3 box box-shadow">
-      <span>Cheese Quantity:<span id="cheese">--</span></span><br>
-      <span>Add-Ons</span><br>
-      <span>On-Click</span><br>
-      <span>Cheese Knife Quantity:<span id="cheeseknife">--</span></span>
-      <span>Wheels of Cheese:<span id="cheesewheel">--</span></span>
+    <div class="col-md-3 box-shadow ">
 
-
-
+      <h4>Add-Ons</h4>
+      <h5>On-Click</h5>
+      <div class="d-flex justify-content-between">Cheese Knives:<div id="cheeseknife">--</div>
+      </div>
+      <div class="d-flex justify-content-between">Wheels of Cheese:<div id="cheesewheel">--</div>
+      </div>
+      <div class="d-flex justify-content-between">Bottles of Wine:<div id="bottleofwine">--</div>
+      </div>
 
       <hr>
-      <span>Automatic</span>
-      <span>Cheese Board Quantity:<span id="cheeseboard">--</span></span>
-      <span>Bottles of Wine:<span id="bottleofwine">--</span></span>
+      <h5>Automatic</h5>
+      <div>Cheese Board Quantity:<div id="cheeseboard">--</div>
+      </div>
+
     </div>
 
   </main>
-  <footer class="text-center">made with 🧀 by JB</footer>
+  <footer class="text-center p-2">made with 🧀 by JB</footer>
   <script src="app.js"></script>
 </body>
 

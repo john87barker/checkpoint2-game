@@ -2,6 +2,8 @@ body {
   display: flex;  
   flex-direction: column;  
   min-height: 100vh;
+  padding: 0;
+  margin: 0
 }
 main{ 
    flex-grow: 1;
@@ -9,8 +11,9 @@ main{
 
 .box-shadow{
   margin-top: 3em;
-  padding-top: 2em;
-  background-color: mediumpurple;
-  box-shadow: 1px 1px 15px blanchedalmond;
-  height: 50vh;
+  padding-top: 1em;
+  background-color: black;
+  box-shadow: .5px .5px 3px whitesmoke;
+  height: 65vh;
+  
 }
