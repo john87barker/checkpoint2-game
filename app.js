@@ -5,28 +5,28 @@ let cheeseWheel = 0
 let cheeseBoard = 0
 let bottleOfWine = 0
 
-
+/**Dictionaries */
 let clickUp = {
   cheeseknife: {
-    price: 20,
+    price: 120,
     quantity: 0,
     multiplier: 1
   },
   cheesewheel: {
-    price: 50,
+    price: 500,
     quantity: 0,
     multiplier: 4
   }
 }
 let autoUp = {
   cheeseboard: {
-    price: 75,
+    price: 1000,
     quantity: 1,
     multiplier: 10
     //starts interval
   },
   bottleOfWine: {
-    price: 100,
+    price: 2000,
     quantity: 1,
     multiplier: (cheese * 2)
     //doubles
@@ -40,10 +40,10 @@ function getCheese() {
 
 function buyCheeseKnife() {
 
-  if (cheese >= 20) {
+  if (cheese >= 120) {
 
     cheeseKnife += 1
-    cheese -= 20
+    cheese -= 120
     modifier('cheeseknife')
   }
   update()
@@ -51,8 +51,8 @@ function buyCheeseKnife() {
 
 function buyCheeseWheel() {
 
-  if (cheese >= 50) {
-    cheese -= 50
+  if (cheese >= 500) {
+    cheese -= 500
     cheeseWheel += 1
     modifier('cheesewheel')
   }
@@ -61,8 +61,8 @@ function buyCheeseWheel() {
 
 function buyCheeseBoard() {
 
-  if (cheese >= 100) {
-    cheese -= 100
+  if (cheese >= 1000) {
+    cheese -= 1000
     cheeseBoard += 1
 
   }
@@ -72,9 +72,9 @@ function buyCheeseBoard() {
 
 function buyWine() {
 
-  if (cheese >= 150) {
-    // cheese -= 150
-    cheese *= 2
+  if (cheese >= 2000) {
+    cheese -= 2000
+    cheese *= 4
     bottleOfWine += 1
   }
 
@@ -100,7 +100,7 @@ function collectAutoUpgrades(cheeseboard) {
 }
 
 function startInterval() {
-  collectionInterval = setInterval(collectAutoUpgrades, 3000)
+  collectionInterval = setInterval(collectAutoUpgrades, 2500)
   // console.log('[interval] It started')
   update()
 }
