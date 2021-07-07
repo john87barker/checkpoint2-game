@@ -17,3 +17,6 @@ main{
   height: 65vh;
   
 }
+.btn{
+  cursor: pointer;
+}

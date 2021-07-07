@@ -15,21 +15,21 @@ let clickUp = {
   cheesewheel: {
     price: 500,
     quantity: 0,
-    multiplier: 4
-  }
-}
-let autoUp = {
-  cheeseboard: {
-    price: 1000,
-    quantity: 1,
-    multiplier: 10
-    //starts interval
+    multiplier: 3
   },
   bottleOfWine: {
     price: 2000,
     quantity: 1,
-    multiplier: (cheese * 2)
+    multiplier: (cheese * 2.5)
     //doubles
+  }
+}
+let autoUp = {
+  cheeseboard: {
+    price: 5000,
+    quantity: 1,
+    multiplier: 5
+    //starts interval
   }
 }
 /***SECTION functions*/
@@ -59,23 +59,23 @@ function buyCheeseWheel() {
   update()
 }
 
+function buyWine() {
+
+  if (cheese >= 2000) {
+    cheese -= 2000
+    cheese *= 2.5
+    bottleOfWine += 1
+  }
+
+  update()
+}
+
 function buyCheeseBoard() {
 
   if (cheese >= 1000) {
     cheese -= 1000
     cheeseBoard += 1
 
-  }
-
-  update()
-}
-
-function buyWine() {
-
-  if (cheese >= 2000) {
-    cheese -= 2000
-    cheese *= 4
-    bottleOfWine += 1
   }
 
   update()
@@ -104,7 +104,6 @@ function startInterval() {
   // console.log('[interval] It started')
   update()
 }
-
 
 function update() {
   if (cheese <= 0) {
