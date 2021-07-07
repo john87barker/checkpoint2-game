@@ -105,10 +105,30 @@ function startInterval() {
   update()
 }
 
+function disableBtn() {
+  if (cheese < 120) {
+    document.getElementById('knife').disabled = true;
+  } else
+    document.getElementById('knife').disabled = false;
+  if (cheese < 500) {
+    document.getElementById('wheel').disabled = true;
+  } else
+    document.getElementById('wheel').disabled = false;
+  if (cheese < 2000) {
+    document.getElementById('wine').disabled = true;
+  } else
+    document.getElementById('wine').disabled = false;
+  if (cheese < 5000) {
+    document.getElementById('board').disabled = true;
+  } else
+    document.getElementById('board').disabled = false;
+}
+
 function update() {
   if (cheese <= 0) {
     cheese = 0
   }
+  disableBtn()
 
   document.getElementById('cheese').innerText = cheese
   document.getElementById('cheeseknife').innerText = cheeseKnife
