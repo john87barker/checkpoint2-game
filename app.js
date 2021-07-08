@@ -18,9 +18,9 @@ let clickUp = {
     multiplier: 3
   },
   bottleOfWine: {
-    price: 2000,
+    price: 1000,
     quantity: 1,
-    multiplier: (cheese * 2.5)
+    multiplier: (cheese * 2)
     //doubles
   }
 }
@@ -62,8 +62,8 @@ function buyCheeseWheel() {
 function buyWine() {
 
   if (cheese >= 2000) {
-    cheese -= 2000
-    cheese *= 2.5
+    cheese *= 2
+    cheese -= 1000
     bottleOfWine += 1
   }
 
@@ -90,7 +90,7 @@ function collectAutoUpgrades(cheeseboard) {
   let multiplier = autoUp['cheeseboard'].multiplier
   // console.log(quantity, multiplier)
 
-  if (cheese >= 100) {
+  if (cheese >= 1000) {
     cheese += (quantity * multiplier)
     // console.log('[upgrades]', upgrades)
     startInterval()
