@@ -19,6 +19,12 @@ main{
 }
 .btn{
   cursor: pointer;
+  width: max-content;
+  
+}
+.btnPic{
+  cursor: pointer;
+  
 }
 .btn-disabled{
     cursor: not-allowed;
