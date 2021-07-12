@@ -63,7 +63,7 @@ function buyWine() {
 
   if (cheese >= 1000) {
     cheese *= 2
-    cheese -= 5000
+    cheese -= 500
     bottleOfWine += 1
   }
 
