@@ -8,12 +8,12 @@ let bottleOfWine = 0
 /**Dictionaries */
 let clickUp = {
   cheeseknife: {
-    price: 120,
+    price: 80,
     quantity: 0,
     multiplier: 1
   },
   cheesewheel: {
-    price: 500,
+    price: 200,
     quantity: 0,
     multiplier: 3
   },
@@ -26,7 +26,7 @@ let clickUp = {
 }
 let autoUp = {
   cheeseboard: {
-    price: 5000,
+    price: 1500,
     quantity: 1,
     multiplier: 5
     //starts interval
@@ -40,10 +40,10 @@ function getCheese() {
 
 function buyCheeseKnife() {
 
-  if (cheese >= 120) {
+  if (cheese >= 80) {
 
     cheeseKnife += 1
-    cheese -= 120
+    cheese -= 80
     modifier('cheeseknife')
   }
   update()
@@ -51,8 +51,8 @@ function buyCheeseKnife() {
 
 function buyCheeseWheel() {
 
-  if (cheese >= 500) {
-    cheese -= 500
+  if (cheese >= 200) {
+    cheese -= 200
     cheeseWheel += 1
     modifier('cheesewheel')
   }
@@ -61,9 +61,9 @@ function buyCheeseWheel() {
 
 function buyWine() {
 
-  if (cheese >= 2000) {
+  if (cheese >= 1000) {
     cheese *= 2
-    cheese -= 1000
+    cheese -= 5000
     bottleOfWine += 1
   }
 
@@ -72,8 +72,8 @@ function buyWine() {
 
 function buyCheeseBoard() {
 
-  if (cheese >= 1000) {
-    cheese -= 1000
+  if (cheese >= 1500) {
+    cheese -= 1500
     cheeseBoard += 1
 
   }
