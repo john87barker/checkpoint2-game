@@ -15,7 +15,7 @@ let clickUp = {
   cheesewheel: {
     price: 200,
     quantity: 0,
-    multiplier: 3
+    multiplier: 2
   },
   bottleOfWine: {
     price: 1000,
